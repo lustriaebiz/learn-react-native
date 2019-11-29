@@ -4,6 +4,9 @@
     "slug": "rnproject",
     "privacy": "public",
     "sdkVersion": "35.0.0",
+    "android": {
+      "package": "com.yourcompany.yourappname"
+    },
     "platforms": [
       "ios",
       "android",
@@ -24,7 +27,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.yourappname"
     }
   }
 }

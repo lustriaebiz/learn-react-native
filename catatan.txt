@@ -1,3 +1,5 @@
 
 
 aktifkan mode penerbangan -> sambungkan wifi satu jaringan
+
+Successfully built standalone app: https://expo.io/artifacts/0d2c6696-57dc-4f98-bf37-1a870b7f6df7
