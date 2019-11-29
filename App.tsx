@@ -1,10 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default function App() {
+
+  let picture = {
+    uri : 'https://statik.tempo.co/data/2018/12/14/id_804209/804209_720.jpg'
+  }
+
   return (
     <View style={styles.container}>
       <Text>Welcome to react native.. Ebiz</Text>
+      <Image source = {picture} style = {{width:193, height:110}}></Image>
     </View>
   );
 }
