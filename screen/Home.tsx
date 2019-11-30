@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, ImageBackground, Button } from 'react-native';
-import { Props } from '../interfaces/Props';
+import { Props } from '../shared/interfaces/Props';
 import { styles } from '../assets/style';
 
 export default class Home extends Component<Props> {
