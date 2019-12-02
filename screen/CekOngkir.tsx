@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, ScrollView, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, ScrollView, SafeAreaView, Picker, View } from 'react-native';
 import Constants from 'expo-constants';
 import {getProvince, getCity} from "./../shared/services/raja-ongkir"
 import { Props } from '../shared/interfaces/Props';
@@ -47,16 +47,46 @@ export default class CekOngkir extends Component<Props, State> {
     }
 
     renderProvince() {
-        if(this.state.loaded_province) 
-            return JSON.stringify(this.state.province);
+        if(this.state.loaded_province) {
+            
+            return (
+                <View>
+                    <Text>Province</Text>
+                    <Picker
+                        // selectedValue={this.state.language}
+                        style={{height: 50, width: 100}}
+                        // onValueChange={(itemValue, itemIndex) =>
+                        //     this.setState({language: itemValue})
+                        // }
+                        >
+                        {this.state.province.map((eventType, index) => <Picker.Item key={index} {...eventType} label={eventType.province_name} value={eventType.province_id}/>) }
+                </Picker>
+                </View>
+            )
+        }
         
         return null
     }
 
     renderCity() {
-        if(this.state.loaded_city) 
-            return JSON.stringify(this.state.city);
+        if(this.state.loaded_city) {
             
+            return (
+                <View>
+                    <Text>City</Text>
+                    <Picker
+                        // selectedValue={this.state.language}
+                        style={{height: 50, width: 100}}
+                        // onValueChange={(itemValue, itemIndex) =>
+                        //     this.setState({language: itemValue})
+                        // }
+                        >
+                        {this.state.city.map((eventType, index) => <Picker.Item key={index} {...eventType} label={eventType.city_name} value={eventType.city_id}/>) }
+                </Picker>
+                </View>
+            )
+        }
+        
         return null
     }
 
@@ -67,15 +97,11 @@ export default class CekOngkir extends Component<Props, State> {
                 <ScrollView  style={styles.scrollView}>
                     <Text>Cek Ongkir Screen </Text>
 
-                    <Text></Text>
-                    <Text>Province</Text>
-                    {
-                        this.state.loaded_province? ( <Text>{this.renderProvince()}</Text>): (<Text></Text>)
-                    }
-
-                    <Text></Text>
-                    <Text>City</Text>
-                    <Text>{this.renderCity()}</Text>
+                    {/* render province */}
+                    {this.renderProvince()}
+                    
+                    {/* render city */}
+                    {this.renderCity()}
 
                 </ScrollView >
             </SafeAreaView>
@@ -91,7 +117,7 @@ const styles = StyleSheet.create({
       marginTop: Constants.statusBarHeight,
     },
     scrollView: {
-      backgroundColor: 'pink',
+    //   backgroundColor: 'pink',
       marginHorizontal: 20,
     },
     text: {

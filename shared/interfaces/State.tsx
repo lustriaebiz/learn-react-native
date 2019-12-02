@@ -5,6 +5,6 @@ export interface State {
     loaded_province: boolean,
     loaded_city: boolean,
     loaded_courier: boolean,
-    province:Province,
-    city: City
+    province:any,
+    city: any
 }
